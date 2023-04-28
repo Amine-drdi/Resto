@@ -1,0 +1,35 @@
+<section class="blog_item_section blog_section section_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <form action="#">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                <div *ngIf="signupForm.controls['email'].errors?.['required']" class="red">
+                  email is required
+              </div>
+              <div *ngIf="signupForm.controls['email'].errors?.['']" calss="red">
+                    email invalide
+              </div>
+              </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="password">
+            </div>
+            <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].touched || signupForm.controls['password'].dirty)">
+              <div *ngIf="signupForm.controls['password'].errors?.['required']" class="red">
+                  password is required
+              </div>
+              <div *ngIf="signupForm.controls['password'].errors?.['minlength']" calss="red">
+                    password must have at least 6 chars
+              </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary py-3 px-5" value="Login">
+              </div>
+          </form>
+        </div>
+      </div>
+      </div>
+</section>
